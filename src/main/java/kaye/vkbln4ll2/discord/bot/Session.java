@@ -1,6 +1,5 @@
 package kaye.vkbln4ll2.discord.bot;
 
-import kaye.vkbln4ll2.discord.bot.log.session.SessionLog;
 import kaye.vkbln4ll2.discord.repo.Vocabulary;
 import kaye.vkbln4ll2.discord.repo.VocabularyPortion;
 import net.dv8tion.jda.api.Permission;
@@ -24,11 +23,7 @@ public class Session {
 
     private VocabularyPortion vocabularyPortion;
 
-    private SessionLog log;
-
     public Session(VocabularyPortion vocabularyPortion, Guild guild, Member member, Consumer<Session> removeSession) {
-        log = SessionLog.create(vocabularyPortion.getId());
-
         this.vocabularyPortion = vocabularyPortion;
         this.guild = guild;
         this.inSessionRole = guild.getRoleById(IN_SESSION_ROLE_ID);
