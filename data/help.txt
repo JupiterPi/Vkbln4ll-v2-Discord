@@ -1,0 +1,19 @@
+# -
+Willkommen bei Vkbln4ll!
+
+Die letzte Version meines Vokabeltrainers hatte einige Probleme, welche hiermit gr#o#stenteils behoben sind.
+
+# Abfrage starten
+Um eine Abfrage zu starten, gib einfach beispielsweise `!start 26-2` f#ur die zweite H#alfte der Lektion 26 in #lobby ein. Es #offnet sich ein Kanal f#ur die Abfrage, wo es weitergeht. Um eine laufende Abfrage jederzeit abzubrechen, gib `stop` ein.
+
+# Weitere Chats
+Diesen Hauptchat `#lobby` kannst du auch zum Chatten verwenden. Fragen zu den Vokabeln, Latein-Hausaufgaben, irgendwas (thematisch passendes)? Rein damit.
+In `# support` kannst du technische Fragen zum eigentlichen Produkt stellen und dich verifizieren lassen, sodass du das Produkt auch nutzen kannst. Schreibe au#serdem dort, wenn du einen Fehler in den Vokabeln bemerkst!
+
+# Vokabelsuche
+Doch es gibt noch eine weitere, NEUE Funktion: Vokabelsuche! Gib einfach in `# suche` ein oder mehrere Stichworte ein. Alle Vokabeln, bei denen alle (bzw. das eine) Stichwort(e) vorkommen, werden ausgegeben. Mit `clear` kannst du nach der Verwendung wieder den Verlauf l#oschen.
+
+# Benachrichtigungen
+Bist du zum ersten Mal da? Ich empfehle, die Kan#ale `# lobby`, `# support` und `# suche` stummzuschalten, indem du auf die Glocke rechts oben tipps (Handy: von rechts rein wischen, dann oben). Dann klingeln deine Ger#ate nicht immer los, sobald jemand anderes den Vokabeltrainer benutzt!
+
+# Viel Spa#s!
