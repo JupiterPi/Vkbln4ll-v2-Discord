@@ -1,6 +1,7 @@
 package kaye.vkbln4ll2.discord.repo;
 
 import jupiterpi.tools.files.Path;
+import jupiterpi.tools.files.TextFile;
 import jupiterpi.tools.files.WrongPathTypeException;
 import jupiterpi.tools.files.csv.CSVObjectsFile;
 
@@ -16,7 +17,7 @@ public class VocabularyPortion {
     public VocabularyPortion(Path path) {
         this.path = path;
         id = path.getFileName().split("\\.")[0];
-        vocabularies = new CSVObjectsFile<Vocabulary>(path, Vocabulary.class, true).getObjects();
+        vocabularies = new CSVObjectsFile<Vocabulary>(new TextFile(path, true), Vocabulary.class).getObjects();
     }
 
     /* edit */
