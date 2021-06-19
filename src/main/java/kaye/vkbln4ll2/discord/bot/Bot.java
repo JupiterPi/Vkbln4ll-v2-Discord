@@ -1,5 +1,6 @@
 package kaye.vkbln4ll2.discord.bot;
 
+import jupiterpi.tools.files.TextFile;
 import kaye.vkbln4ll2.discord.bot.advertisement.StudentsListener;
 import kaye.vkbln4ll2.discord.bot.services.HelpMessage;
 import kaye.vkbln4ll2.discord.bot.services.SearchChannelService;
@@ -19,7 +20,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Bot extends ListenerAdapter {
-    private final String TOKEN = "ODA3MjI1ODQ4NzA0NDAxNDQ4.YB05pw.uFeZdtBWxCuuyviLhZKXPdmKVnA";
     private final String GUILD_ID = "807229629940629516";
     private final String LOBBY_CHANNEL_ID = "807229728095862794";
     private final String VERIFIED_ROLE_ID = "808662111482937394";
@@ -44,8 +44,8 @@ public class Bot extends ListenerAdapter {
 
     private Guild studentsGuild;
 
-    public Bot() throws LoginException, InterruptedException {
-        jda = JDABuilder.createDefault(TOKEN)
+    public Bot(String token) throws LoginException, InterruptedException {
+        jda = JDABuilder.createDefault(token)
                 .setActivity(Activity.listening("!help"))
                 .addEventListeners(this)
                 .build();
