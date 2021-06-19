@@ -131,9 +131,7 @@ public class Bot extends ListenerAdapter {
             }
         } else if (event.getChannel() == writingChannel) {
             if (message.equals("bye")) {
-                writingChannel.getHistoryFromBeginning(100).queue(messageHistory -> {
-                    writingChannel.deleteMessages(messageHistory.getRetrievedHistory()).queue();
-                });
+                deleteAllMessages(writingChannel);
                 Member member = event.getMember();
                 guild.removeRoleFromMember(member, writerRole).queue(x -> {
                     guild.addRoleToMember(member, writerRole).queue();
@@ -146,9 +144,7 @@ public class Bot extends ListenerAdapter {
             }
         } else if (event.getChannel() == searchChannel) {
             if (message.equals("clear")) {
-                searchChannel.getHistoryFromBeginning(100).queue(messageHistory -> {
-                    searchChannel.deleteMessages(messageHistory.getRetrievedHistory()).queue();
-                });
+                deleteAllMessages(searchChannel);
             } else {
                 Message feedback = searchChannelService.search(message.split(" "));
                 if (feedback != null) {
@@ -167,5 +163,16 @@ public class Bot extends ListenerAdapter {
                 }
             }
         }
+    }
+
+    private void deleteAllMessages(TextChannel channel) {
+        channel.getHistoryFromBeginning(100).queue(messageHistory -> {
+            List<Message> history = messageHistory.getRetrievedHistory();
+            if (!history.isEmpty()) {
+                channel.deleteMessages(history).queue((v) -> {
+                    deleteAllMessages(channel);
+                });
+            }
+        });
     }
 }
