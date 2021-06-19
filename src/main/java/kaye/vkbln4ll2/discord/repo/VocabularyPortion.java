@@ -27,7 +27,7 @@ public class VocabularyPortion {
     }
 
     public List<Vocabulary> getVocabularies() {
-        return vocabularies;
+        return new ArrayList<>(vocabularies);
     }
 
     public Vocabulary addVocabulary(String latin, String[] german) {
