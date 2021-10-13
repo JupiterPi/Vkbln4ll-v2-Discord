@@ -1,7 +1,7 @@
-package kaye.vkbln4ll2.discord.bot;
+package jupiterpi.vkbln4ll.bot;
 
-import kaye.vkbln4ll2.discord.repo.Vocabulary;
-import kaye.vkbln4ll2.discord.repo.VocabularyPortion;
+import jupiterpi.vkbln4ll.repo.Vocabulary;
+import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
 

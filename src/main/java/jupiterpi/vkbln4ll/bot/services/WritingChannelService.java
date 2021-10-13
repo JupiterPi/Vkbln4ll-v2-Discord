@@ -1,7 +1,7 @@
-package kaye.vkbln4ll2.discord.bot.services;
+package jupiterpi.vkbln4ll.bot.services;
 
-import kaye.vkbln4ll2.discord.repo.Vocabulary;
-import kaye.vkbln4ll2.discord.repo.VocabularyPortion;
+import jupiterpi.vkbln4ll.repo.Vocabulary;
+import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 
 public class WritingChannelService {
     private VocabularyPortion enteredPortion = null;

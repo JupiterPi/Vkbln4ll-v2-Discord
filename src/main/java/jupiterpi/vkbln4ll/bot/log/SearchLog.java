@@ -1,4 +1,4 @@
-package kaye.vkbln4ll2.discord.bot.log;
+package jupiterpi.vkbln4ll.bot.log;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.csv.CSVCastable;

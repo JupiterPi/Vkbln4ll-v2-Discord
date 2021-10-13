@@ -1,11 +1,5 @@
-package kaye.vkbln4ll2.discord.bot;
+package jupiterpi.vkbln4ll.bot;
 
-import jupiterpi.tools.files.TextFile;
-import kaye.vkbln4ll2.discord.bot.advertisement.StudentsListener;
-import kaye.vkbln4ll2.discord.bot.services.HelpMessage;
-import kaye.vkbln4ll2.discord.bot.services.SearchChannelService;
-import kaye.vkbln4ll2.discord.bot.services.WritingChannelService;
-import kaye.vkbln4ll2.discord.repo.VocabularyPortion;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.*;
@@ -13,6 +7,10 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
+import jupiterpi.vkbln4ll.bot.services.HelpMessage;
+import jupiterpi.vkbln4ll.bot.services.SearchChannelService;
+import jupiterpi.vkbln4ll.bot.services.WritingChannelService;
+import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 
 import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
@@ -28,8 +26,6 @@ public class Bot extends ListenerAdapter {
     private final String WRITER_ROLE_ID = "808680338447532053";
 
     private final String SEARCH_CHANNEL_ID = "809026608949231617";
-
-    private final String STUDENTS_GUILD_ID = "688367609913147403";
 
     private JDA jda;
     private Guild guild;
@@ -50,7 +46,6 @@ public class Bot extends ListenerAdapter {
                 .addEventListeners(this)
                 .build();
         jda.awaitReady();
-        jda.addEventListener(new StudentsListener(jda));
         guild = jda.getGuildById(GUILD_ID);
         lobbyChannel = guild.getTextChannelById(LOBBY_CHANNEL_ID);
         verifiedRole = guild.getRoleById(VERIFIED_ROLE_ID);

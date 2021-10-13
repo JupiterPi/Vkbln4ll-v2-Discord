@@ -1,4 +1,4 @@
-package kaye.vkbln4ll2.discord.bot.services;
+package jupiterpi.vkbln4ll.bot.services;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;

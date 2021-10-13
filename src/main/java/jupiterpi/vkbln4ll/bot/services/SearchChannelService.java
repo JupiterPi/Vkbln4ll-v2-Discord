@@ -1,8 +1,8 @@
-package kaye.vkbln4ll2.discord.bot.services;
+package jupiterpi.vkbln4ll.bot.services;
 
 import jupiterpi.tools.util.ToolsUtil;
-import kaye.vkbln4ll2.discord.repo.Vocabulary;
-import kaye.vkbln4ll2.discord.repo.VocabularyPortion;
+import jupiterpi.vkbln4ll.repo.Vocabulary;
+import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Message;

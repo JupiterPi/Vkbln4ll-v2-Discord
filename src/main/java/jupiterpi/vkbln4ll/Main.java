@@ -1,8 +1,8 @@
-package kaye.vkbln4ll2.discord;
+package jupiterpi.vkbln4ll;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
-import kaye.vkbln4ll2.discord.bot.Bot;
+import jupiterpi.vkbln4ll.bot.Bot;
 
 import javax.security.auth.login.LoginException;
 

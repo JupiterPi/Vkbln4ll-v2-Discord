@@ -1,4 +1,4 @@
-package kaye.vkbln4ll2.discord.repo;
+package jupiterpi.vkbln4ll.repo;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
@@ -17,7 +17,9 @@ public class VocabularyPortion {
     public VocabularyPortion(Path path) {
         this.path = path;
         id = path.getFileName().split("\\.")[0];
-        vocabularies = new CSVObjectsFile<Vocabulary>(new TextFile(path, true), Vocabulary.class).getObjects();
+        try {
+            vocabularies = new CSVObjectsFile<Vocabulary>(new TextFile(path, true), Vocabulary.class).getObjects();
+        } catch (TextFile.DoesNotExistException ignored) {}
     }
 
     /* edit */

@@ -1,4 +1,4 @@
-package kaye.vkbln4ll2.discord.repo;
+package jupiterpi.vkbln4ll.repo;
 
 import jupiterpi.tools.files.csv.CSVCastable;
 import jupiterpi.tools.util.ToolsUtil;

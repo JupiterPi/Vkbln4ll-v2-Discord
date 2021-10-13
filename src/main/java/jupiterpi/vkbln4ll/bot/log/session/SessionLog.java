@@ -1,4 +1,4 @@
-package kaye.vkbln4ll2.discord.bot.log.session;
+package jupiterpi.vkbln4ll.bot.log.session;
 
 import jupiterpi.tools.files.Path; 
 import jupiterpi.tools.files.csv.CSVCastable;
