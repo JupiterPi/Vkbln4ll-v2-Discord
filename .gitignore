@@ -2,7 +2,7 @@
 /target
 Vkbln4ll v2 Discord.iml
 /data/token.txt
-/data-rpi-lan
+/data/properties.txt
 
 .gradle
 build

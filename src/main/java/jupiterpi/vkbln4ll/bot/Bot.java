@@ -1,5 +1,6 @@
 package jupiterpi.vkbln4ll.bot;
 
+import jupiterpi.vkbln4ll.ConfigFile;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.*;
@@ -18,14 +19,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Bot extends ListenerAdapter {
-    private final String GUILD_ID = "807229629940629516";
-    private final String LOBBY_CHANNEL_ID = "807229728095862794";
-    private final String VERIFIED_ROLE_ID = "808662111482937394";
+    private final String GUILD_ID = ConfigFile.getProperty("guild-id");
+    private final String LOBBY_CHANNEL_ID = ConfigFile.getProperty("lobby-channel-id");
+    private final String VERIFIED_ROLE_ID = ConfigFile.getProperty("verified-role-id");
 
-    private final String WRITING_CHANNEL_ID = "808696327307132978";
-    private final String WRITER_ROLE_ID = "808680338447532053";
+    private final String WRITING_CHANNEL_ID = ConfigFile.getProperty("writing-channel-id");
+    private final String WRITER_ROLE_ID = ConfigFile.getProperty("writing-role-id");
 
-    private final String SEARCH_CHANNEL_ID = "809026608949231617";
+    private final String SEARCH_CHANNEL_ID = ConfigFile.getProperty("search-channel-id");
 
     private JDA jda;
     private Guild guild;
@@ -49,7 +50,7 @@ public class Bot extends ListenerAdapter {
         guild = jda.getGuildById(GUILD_ID);
         lobbyChannel = guild.getTextChannelById(LOBBY_CHANNEL_ID);
         verifiedRole = guild.getRoleById(VERIFIED_ROLE_ID);
-        readEmote = guild.getEmotesByName("bot_read", true).get(0);
+        readEmote = guild.getEmotesByName(ConfigFile.getProperty("read-emote-name"), true).get(0);
 
         writingChannel = guild.getTextChannelById(WRITING_CHANNEL_ID);
         writerRole = guild.getRoleById(WRITER_ROLE_ID);

@@ -1,5 +1,6 @@
 package jupiterpi.vkbln4ll.bot;
 
+import jupiterpi.vkbln4ll.ConfigFile;
 import jupiterpi.vkbln4ll.repo.Vocabulary;
 import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 import net.dv8tion.jda.api.Permission;
@@ -9,8 +10,8 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class Session {
-    private final String IN_SESSION_ROLE_ID = "807945629967712256";
-    private final String SESSIONS_CATEGORY_ID = "807946352884711444";
+    private final String IN_SESSION_ROLE_ID = ConfigFile.getProperty("in-session-role-id");
+    private final String SESSIONS_CATEGORY_ID = ConfigFile.getProperty("sessions-category-id");
 
     private Guild guild;
     private Role inSessionRole;

@@ -3,6 +3,7 @@ package jupiterpi.vkbln4ll.bot.services;
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
 import jupiterpi.tools.util.ToolsUtil;
+import jupiterpi.vkbln4ll.Paths;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HelpMessage {
-    private static final Path HELP_TEXT_PATH = Path.getRunningDirectory().subdir("data").file("help.txt");
+    private static final Path HELP_TEXT_PATH = Paths.help;
 
     public static MessageEmbed build() {
         EmbedBuilder helpMessage = new EmbedBuilder()
@@ -48,16 +49,5 @@ public class HelpMessage {
         helpMessage.addField(fieldHeader, ToolsUtil.appendWithSeparator(fieldLines, "\n"), false);
 
         return helpMessage.build();
-    }
-
-    public static Message buildStudentsHelpMessage() {
-        MessageEmbed embed =  new EmbedBuilder()
-                .setTitle("Vkbln4ll Discord")
-                .setColor(Color.BLACK)
-                .addField("", "Viele erinnern sich bestimmt an meinen Vokabeltrainer, Vkbln4ll. Nun, hier ist er. Generalüberholt. Neue Features. DIREKT IN DISCORD! Aber das Beste ist: Diesmal funktioniert er auch!", false)
-                .build();
-        return new MessageBuilder()
-                .setContent("Viele erinnern sich bestimmt an meinen Vokabeltrainer, Vkbln4ll. Nun, hier ist er. Generalüberholt. Neue Features. DIREKT IN DISCORD! Aber das Beste ist: Diesmal funktioniert er auch!\nhttps://discord.gg/spbDMudXdh")
-                .build();
     }
 }
