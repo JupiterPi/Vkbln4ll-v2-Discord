@@ -1,0 +1,13 @@
+guild-id:
+lobby-channel-id:
+verified-role-id:
+
+writing-channel-id:
+writing-role-id:
+
+search-channel-id:
+
+read-emote-name:
+
+in-session-role-id:
+sessions-category-id:
