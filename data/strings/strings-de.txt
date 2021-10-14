@@ -1,3 +1,5 @@
+debug-mode-status: Nicht verfügbar (wende dich an %s)
+
 portion-not-found: Vokabelportion nicht gefunden. Versuche es erneut oder wende dich an einen @supporter
 not-verified: Du musst das Produkt kaufen und dich in `#support` verifizieren lassen, um es zu nutzen.
 

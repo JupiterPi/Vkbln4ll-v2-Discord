@@ -1,6 +1,7 @@
 package jupiterpi.vkbln4ll.bot;
 
 import jupiterpi.vkbln4ll.ConfigFile;
+import jupiterpi.vkbln4ll.Main;
 import jupiterpi.vkbln4ll.Strings;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -44,7 +45,7 @@ public class Bot extends ListenerAdapter {
 
     public Bot(String token) throws LoginException, InterruptedException {
         jda = JDABuilder.createDefault(token)
-                .setActivity(Activity.listening("!help"))
+                .setActivity(Main.debugMode ? Activity.playing(String.format(Strings.getString("debug-mode-status"), ConfigFile.getProperty("administrator"))) : Activity.listening("!help"))
                 .addEventListeners(this)
                 .build();
         jda.awaitReady();
