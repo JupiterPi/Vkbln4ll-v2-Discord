@@ -1,0 +1,44 @@
+debug-mode-status: Inavailable (contact %s)
+
+portion-not-found: Portion not found. Try again or contact a supporter.
+not-verified: You have to buy the product and get verified in order to use it.
+
+session-channel-prefix: session-
+
+s-choose-direction: Which direction to ask in? German-Latin (dl), Latin-German (ld) or random (zu)
+s-choose-direction-re: German-Latin (dl), Latin-German (ld) or random (zu)
+s-stopping: Stopping...
+s-feedback-right: RIGHT
+s-feedback-partial: PARTIAL
+s-feedback-wrong: WRONG
+s-feedback-percent-right: You've got %s right.
+s-feedback-abs-wrong: You've got %s wrong.
+s-feedback-repeat: Try again? -> Y/n
+
+h-title: Help - Vkbln4ll Discord
+h-footer: Click the checkmark when you've finished reading!
+
+sc-too-many-results: Too many results. Please specify your query by adding more or more specific search terms.
+sc-embed-vocabularies: Vocabularies
+sc-embed-in-portion: in Portion
+sc-embed-found: Vocabularies found:
+sc-embed-nothing-found: No vocabularies found.
+
+w-vocabularies-list-title: Existing vocabularies:
+w-vocabularies-list-empty: (none)
+w-index-set: Next vocabulary will be added to position %s.
+w-nan: %s is not a number...
+w-vocabulary-removed: Removed vocabulary at position %s.
+w-canceled: Canceled.
+w-left: Left portion.
+w-added: Added vocabulary:
+w-at-position: (at position %s).
+w-reloaded: Reloaded.
+w-created-and-entered: Created and entered portion %s.
+w-entered: Entered portion %s.
+w-not-found: Not found.
+w-portion-removed: Removed portion %s.
+w-portions-list-title: Existing portions:
+w-portions-list-empty: (none)
+w-portions-list-size-unit: vocabularies
+w-unknown-command: Unknown command.

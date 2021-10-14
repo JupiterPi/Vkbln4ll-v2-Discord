@@ -1,6 +1,6 @@
 debug-mode-status: Nicht verfügbar (wende dich an %s)
 
-portion-not-found: Vokabelportion nicht gefunden. Versuche es erneut oder wende dich an einen @supporter
+portion-not-found: Vokabelportion nicht gefunden. Versuche es erneut oder wende dich an einen Supporter.
 not-verified: Du musst das Produkt kaufen und dich in `#support` verifizieren lassen, um es zu nutzen.
 
 session-channel-prefix: abfrage-
@@ -15,7 +15,7 @@ s-feedback-percent-right: Du hast %s richtig.
 s-feedback-abs-wrong: Du hast %s falsch.
 s-feedback-repeat: Wiederholen? -> Y/n
 
-h-title: Hilfe: Vkbln4ll Discord
+h-title: Hilfe - Vkbln4ll Discord
 h-footer: Klicke auf den Haken, wenn du fertig bist!
 
 sc-too-many-results: Zu viele Ergebnisse. Bitte schränke deine Suche ein, indem du mehr oder genauere Stichworte angibst.
