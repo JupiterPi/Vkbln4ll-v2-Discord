@@ -1,5 +1,6 @@
 package jupiterpi.vkbln4ll.bot.services;
 
+import jupiterpi.vkbln4ll.Strings;
 import jupiterpi.vkbln4ll.repo.Vocabulary;
 import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 
@@ -17,33 +18,33 @@ public class WritingChannelService {
                     Vocabulary vocabulary = enteredPortion.getVocabularies().get(i);
                     text += "\n(" + (i+1) + ") " + vocabulary.toString(); // with 1 based index
                 }
-                if (text.equals("")) text = "(keine vorhanden)";
-                return "Vorhandene Vokabeln: " + text;
+                if (text.equals("")) text = Strings.getString("w-vocabularies-list-empty");
+                return Strings.getString("w-vocabularies-list-title") + " " + text;
             }
             if (parts[0].equals("add-in")) {
                 try {
                     if (parts[1].equals("reset")) cache_index = 0;
                     else cache_index = Integer.parseInt(parts[1]); // with 1 based index
-                    return "Nächste Vokabel wird an Position " + cache_index + " eingefügt. ";
+                    return String.format(Strings.getString("w-index-set"), cache_index);
                 } catch (NumberFormatException e) {
-                    return parts[1] + " ist keine Zahl...";
+                    return String.format(Strings.getString("w-nan"), parts[1]);
                 }
             }
             if (parts[0].equals("remove")) {
                 try {
                     enteredPortion.removeVocabulary(Integer.parseInt(parts[1])-1);
-                    return "Vokabel bei Position " + parts[1] + " wurde entfernt. ";
+                    return String.format(Strings.getString("w-vocabulary-removed"), parts[1]);
                 } catch (NumberFormatException e) {
-                    return parts[1] + " ist keine Zahl...";
+                    return String.format(Strings.getString("w-nan"), parts[1]);
                 }
             }
             if (msg.equalsIgnoreCase("x")) {
                 cache_latin = null;
-                return "Abgebrochen. ";
+                return Strings.getString("w-canceled");
             }
             if (msg.equals("leave")) {
                 enteredPortion = null;
-                return "Portion verlassen. ";
+                return Strings.getString("w-left");
             }
             if (cache_latin == null) {
                 cache_latin = msg;
@@ -56,9 +57,9 @@ public class WritingChannelService {
                 enteredPortion.write();
                 cache_latin = null;
 
-                String text = "Vokabel hinzugefügt: " + vocabulary.toString();
+                String text = Strings.getString("w-added") + " " + vocabulary.toString();
                 if (cache_index != 0) {
-                    text += " (an Position " + cache_index + "). ";
+                    text += String.format(Strings.getString("w-at-position"), cache_index);
                     cache_index = 0;
                 }
                 return text;
@@ -66,39 +67,39 @@ public class WritingChannelService {
         } else {
             if (msg.equals("reload")) {
                 VocabularyPortion.reload();
-                return "Neu geladen. ";
+                return Strings.getString("w-reloaded");
             }
             if (parts[0].equals("create")) {
                 enteredPortion = VocabularyPortion.createPortion(parts[1]);
-                return "Portion " + parts[1] + " erstellt und betreten. ";
+                return String.format(Strings.getString("w-created-and-entered"), parts[1]);
             }
             if (parts[0].equals("enter")) {
                 for (VocabularyPortion portion : VocabularyPortion.getPortions()) {
                     if (portion.getId().equals(parts[1])) {
                         enteredPortion = portion;
-                        return "Portion " + parts[1] + " betreten. ";
+                        return String.format(Strings.getString("w-entered"), parts[1]);
                     }
                 }
-                return "Nicht gefunden. ";
+                return Strings.getString("w-not-found");
             }
             if (parts[0].equals("remove")) {
                 VocabularyPortion toDelete = null;
                 for (VocabularyPortion portion : VocabularyPortion.getPortions()) {
                     if (portion.getId().equals(parts[1])) toDelete = portion;
                 }
-                if (toDelete == null) return "Nicht gefunden. ";
+                if (toDelete == null) return Strings.getString("w-not-found");
                 VocabularyPortion.removePortion(toDelete.getId());
-                return "Portion " + parts[1] + " wurde entfernt. ";
+                return String.format(Strings.getString("w-portion-removed"), parts[1]);
             }
             if (msg.equals("list")) {
                 String text = "";
                 for (VocabularyPortion portion : VocabularyPortion.getPortions()) {
-                    text += "\n" + portion.getId() + "      (" + portion.getVocabularies().size() + " Vokabeln)";
+                    text += "\n" + portion.getId() + "      (" + portion.getVocabularies().size() + " " + Strings.getString("w-portions-list-size-unit") + ")";
                 }
-                if (text.equals("")) text = "(keine vorhanden)";
-                return "Vorhandene Vokabelportionen: " + text;
+                if (text.equals("")) text = Strings.getString("w-portions-list-empty");
+                return Strings.getString("w-portions-list-title") + text;
             }
-            return "Unbekannter Befehl. ";
+            return Strings.getString("w-unknown-command");
         }
     }
 }

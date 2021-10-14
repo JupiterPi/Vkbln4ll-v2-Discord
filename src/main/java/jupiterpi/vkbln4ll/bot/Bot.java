@@ -1,6 +1,7 @@
 package jupiterpi.vkbln4ll.bot;
 
 import jupiterpi.vkbln4ll.ConfigFile;
+import jupiterpi.vkbln4ll.Strings;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.*;
@@ -100,7 +101,7 @@ public class Bot extends ListenerAdapter {
                         event.getMessage().delete().queue();
                     } else {
                         event.getMessage().delete().queue();
-                        lobbyChannel.sendMessage("Vokabelportion nicht gefunden. Versuche es erneut oder wende dich an einen @supporter").queue(msg -> {
+                        lobbyChannel.sendMessage(Strings.getString("portion-not-found")).queue(msg -> {
                             new Thread(() -> {
                                 try {
                                     Thread.sleep(3 * 1000);
@@ -113,7 +114,7 @@ public class Bot extends ListenerAdapter {
                     }
                 } else {
                     event.getMessage().delete().queue();
-                    lobbyChannel.sendMessage("Du musst das Produkt kaufen und dich in `#support` verifizieren lassen, um es zu nutzen.").queue(msg -> {
+                    lobbyChannel.sendMessage(Strings.getString("not-verified")).queue(msg -> {
                         new Thread(() -> {
                             try {
                                 Thread.sleep(5 * 1000);

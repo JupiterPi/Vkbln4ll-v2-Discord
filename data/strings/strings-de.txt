@@ -1,0 +1,42 @@
+portion-not-found: Vokabelportion nicht gefunden. Versuche es erneut oder wende dich an einen @supporter
+not-verified: Du musst das Produkt kaufen und dich in `#support` verifizieren lassen, um es zu nutzen.
+
+session-channel-prefix: abfrage-
+
+s-choose-direction: Wie sollen die Vokabeln abgefragt werden? Deutsch-Latein (dl), Latein-Deutsch (ld) oder je zufällig (zu)
+s-choose-direction-re: Deutsch-Latein (dl), Latein-Deutsch (ld) oder je zufällig (zu)
+s-stopping: Wird gestoppt...
+s-feedback-right: RICHTIG
+s-feedback-partial: MANGELHAFT
+s-feedback-wrong: FALSCH
+s-feedback-percent-right: Du hast %s richtig.
+s-feedback-abs-wrong: Du hast %s falsch.
+s-feedback-repeat: Wiederholen? -> Y/n
+
+h-title: Hilfe: Vkbln4ll Discord
+h-footer: Klicke auf den Haken, wenn du fertig bist!
+
+sc-too-many-results: Zu viele Ergebnisse. Bitte schränke deine Suche ein, indem du mehr oder genauere Stichworte angibst.
+sc-embed-vocabularies: Vokabeln
+sc-embed-in-portion: in Vokabelportion
+sc-embed-found: Vokabeln gefunden:
+sc-embed-nothing-found: Keine Vokabeln gefunden.
+
+w-vocabularies-list-title: Vorhandene Vokabeln:
+w-vocabularies-list-empty: (keine vorhanden)
+w-index-set: Nächste Vokabel wird an Position %s eingefügt.
+w-nan: %s ist keine Zahl...
+w-vocabulary-removed: Vokabel bei Position %s wurde entfernt.
+w-canceled: Abgebrochen.
+w-left: Portion verlassen.
+w-added: Vokabel hinzugefügt:
+w-at-position: (an Position %s).
+w-reloaded: Neu geladen.
+w-created-and-entered: Portion %s erstellt und betreten.
+w-entered: Portion %s betreten.
+w-not-found: Nicht gefunden.
+w-portion-removed: Portion %s wurde entfernt.
+w-portions-list-title: Vorhandene Vokabelportionen:
+w-portions-list-empty: (keine vorhanden)
+w-portions-list-size-unit: Vokabeln
+w-unknown-command: Unbekannter Befehl.

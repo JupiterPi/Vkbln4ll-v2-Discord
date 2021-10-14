@@ -4,6 +4,7 @@ import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
 import jupiterpi.tools.util.ToolsUtil;
 import jupiterpi.vkbln4ll.Paths;
+import jupiterpi.vkbln4ll.Strings;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -19,8 +20,8 @@ public class HelpMessage {
     public static MessageEmbed build() {
         EmbedBuilder helpMessage = new EmbedBuilder()
                 .setColor(Color.BLACK)
-                .setTitle("Hilfe: Vkbln4ll Discord")
-                .setFooter("Klicke auf den Haken, wenn du fertig bist!");
+                .setTitle(Strings.getString("h-title"))
+                .setFooter(Strings.getString("h-footer"));
 
         String fieldHeader = null;
         List<String> fieldLines = new ArrayList<>();

@@ -1,6 +1,7 @@
 package jupiterpi.vkbln4ll.bot.services;
 
 import jupiterpi.tools.util.ToolsUtil;
+import jupiterpi.vkbln4ll.Strings;
 import jupiterpi.vkbln4ll.repo.Vocabulary;
 import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -39,19 +40,19 @@ public class SearchChannelService {
             String vocabulariesFieldText = ToolsUtil.appendWithSeparator(vocabulariesResult, "\n");
             String portionsFieldText = ToolsUtil.appendWithSeparator(results.values().toArray(new String[0]), "\n");
 
-            if (vocabulariesFieldText.length() > 1020) return new MessageBuilder().setContent("Zu viele Ergebnisse. Bitte schränke deine Suche ein, indem du mehr oder genauere Stichworte angibst. ").build();
+            if (vocabulariesFieldText.length() > 1020) return new MessageBuilder().setContent(Strings.getString("sc-too-many-results")).build();
 
             MessageEmbed embed = new EmbedBuilder()
                     .setColor(Color.BLACK)
-                    .addField("Vokabeln", vocabulariesFieldText, true)
-                    .addField("in Vokabelportion", portionsFieldText, true)
+                    .addField(Strings.getString("sc-embed-vocabularies"), vocabulariesFieldText, true)
+                    .addField(Strings.getString("sc-embed-in-portion"), portionsFieldText, true)
                     .build();
             return new MessageBuilder()
-                    .setContent("Vokabeln gefunden: ")
+                    .setContent(Strings.getString("sc-embed-found"))
                     .setEmbed(embed)
                     .build();
         } else {
-            return new MessageBuilder().setContent("Keine Vokabeln gefunden. ").build();
+            return new MessageBuilder().setContent(Strings.getString("sc-embed-nothing-found")).build();
         }
     }
 }

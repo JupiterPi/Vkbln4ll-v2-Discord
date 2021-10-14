@@ -1,6 +1,7 @@
 package jupiterpi.vkbln4ll.bot;
 
 import jupiterpi.vkbln4ll.ConfigFile;
+import jupiterpi.vkbln4ll.Strings;
 import jupiterpi.vkbln4ll.repo.Vocabulary;
 import jupiterpi.vkbln4ll.repo.VocabularyPortion;
 import net.dv8tion.jda.api.Permission;
@@ -32,7 +33,7 @@ public class Session {
 
         this.member = member;
         guild.addRoleToMember(member, inSessionRole).queue();
-        sessionsCategory.createTextChannel("abfrage-" + member.getEffectiveName())
+        sessionsCategory.createTextChannel(Strings.getString("session-channel-prefix") + member.getEffectiveName())
                 .addPermissionOverride(member, EnumSet.of(Permission.VIEW_CHANNEL), null)
                 .queue(channel -> {
                     this.channel = channel;
@@ -65,7 +66,7 @@ public class Session {
                 phase = Phase.RUNNING;
                 askNext();
             } catch (IllegalArgumentException e) {
-                return "Deutsch-Latein (dl), Latein-Deutsch (ld) oder je zufällig (zu)";
+                return Strings.getString("s-choose-direction-re");
             }
         }
 
@@ -98,7 +99,7 @@ public class Session {
             }
         }).start();
 
-        channel.sendMessage("Wird gestoppt...").queue();
+        channel.sendMessage(Strings.getString("s-stopping")).queue();
     }
 
     private Direction direction;
@@ -124,7 +125,7 @@ public class Session {
 
         phase = Phase.WAIT_DIRECTION;
 
-        channel.sendMessage("Wie sollen die Vokabeln abgefragt werden? Deutsch-Latein (dl), Latein-Deutsch (ld) oder je zufällig (zu)").queue();
+        channel.sendMessage(Strings.getString("s-choose-direction")).queue();
     }
 
     private void askNext() {
@@ -168,9 +169,9 @@ public class Session {
 
         String text = "";
         switch (feedback) {
-            case RIGHT: text = "RICHTIG\n"; break;
-            case IMPERFECT: text = "MANGELHAFT\n"; break;
-            case WRONG: text = "FALSCH\n"; break;
+            case RIGHT: text = Strings.getString("s-feedback-right") + "\n"; break;
+            case IMPERFECT: text = Strings.getString("s-feedback-partial") + "\n"; break;
+            case WRONG: text = Strings.getString("s-feedback-wrong") + "\n"; break;
         }
 
         if (feedback != Feedback.RIGHT || forceRepeat) text += currentVocabulary.toString();
@@ -188,10 +189,10 @@ public class Session {
         int amountRight = vocabularies.size() - amountWrong;
         float rightPercent = ((float) amountRight) / ((float)vocabularies.size());
         int rightPercentNumber = (int) (rightPercent*100);
-        text += "Du hast " + rightPercentNumber + "% richtig. \n";
+        text += String.format(Strings.getString("s-feedback-percent-right"), rightPercentNumber + "%") + "\n";
 
-        if (wrongVocabularies.size() > 0) text += "Du hast " + amountWrong + " Vokabeln falsch. ";
-        text += "Wiederholen? -> Y/n";
+        if (wrongVocabularies.size() > 0) text += String.format(Strings.getString("s-feedback-abs-wrong"), amountWrong);
+        text += Strings.getString("s-feedback-repeat");
 
         channel.sendMessage(text).queue();
 

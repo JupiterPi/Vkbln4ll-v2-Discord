@@ -4,6 +4,7 @@ import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;
 import jupiterpi.tools.files.WrongPathTypeException;
 import jupiterpi.tools.files.csv.CSVObjectsFile;
+import jupiterpi.vkbln4ll.Paths;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +58,7 @@ public class VocabularyPortion {
 
     /* --- repo --- */
 
-    private static final Path dataDir = Path.getRunningDirectory().subdir("data").subdir("voc");
+    private static final Path dataDir = Paths.vocsDir;
 
     private static List<VocabularyPortion> portions = getPortions();
 

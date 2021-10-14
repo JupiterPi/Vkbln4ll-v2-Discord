@@ -11,3 +11,5 @@ read-emote-name:
 
 in-session-role-id:
 sessions-category-id:
+
+strings: strings-de.txt
